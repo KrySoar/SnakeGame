@@ -15,24 +15,24 @@ BodyPart::BodyPart(sf::Vector2f position)
 	partShape.setFillColor(sf::Color(150,255,150));
 }
 
-void BodyPart::move(char direction)//(U)p (D)own (L)eft (R)ight
+void BodyPart::move(Direction dir)//(U)p (D)own (L)eft (R)ight
 {
 	lastPosition = partShape.getPosition();
-	switch(direction)
+	switch(dir)
 	{
-		case 'U':
+		case Up:
 			partShape.move(0,-SNAKE_SPEED);
-			
 			break;
-		case 'D':
+
+		case Down:
 			partShape.move(0,SNAKE_SPEED);
 			break;
 
-		case 'L':
+		case Left:
 			partShape.move(-SNAKE_SPEED,0);
 			break;
 
-		case 'R':
+		case Right:
 			partShape.move(SNAKE_SPEED,0);
 			break;
 	

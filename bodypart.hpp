@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "constvars.hpp"
 
 class BodyPart
 {
@@ -11,7 +12,7 @@ class BodyPart
 		BodyPart();
 		BodyPart(sf::Vector2f position);
 
-		void move(char direction);//(U)p (D)own (L)eft (R)ight
+		void move(Direction);
 		void draw(sf::RenderWindow *win);
 
 		sf::Vector2f getPosition();

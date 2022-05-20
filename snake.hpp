@@ -6,14 +6,14 @@
 class Snake
 {
 	private:
-		BodyPart snakeHead;
-		std::vector<BodyPart*> snakeBody;
+
+		std::vector<BodyPart> snakeBody;
 		
 
 	public:
 		Snake();
 
-		void move(char direction);//(U)p (D)own (L)eft (R)ight
+		void move(Direction);
 
 		void draw(sf::RenderWindow *win);
 
@@ -22,6 +22,6 @@ class Snake
 
 		bool isSelfColliding();
 
-		void operator++(int);
+		void grow();
 		void reset();
 };
