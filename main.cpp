@@ -13,13 +13,13 @@ int main()
 
 	Fruit fruit;
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
 
 			if(event.type == sf::Event::KeyPressed )
 			{
@@ -41,26 +41,28 @@ int main()
 						break;
 				}
 			}
-        }
+		}
 
 		//Screen border collision
- 
+
 		if(snake.getPosition().x > WIN_WIDTH
-		|| snake.getPosition().x < 0
-		|| snake.getPosition().y > WIN_HEIGHT
-		|| snake.getPosition().y < 0)
+				|| snake.getPosition().x < 0
+				|| snake.getPosition().y > WIN_HEIGHT
+				|| snake.getPosition().y < 0)
 		{
 			snake.reset();
 			fruit.reset();
+			snakeDirection = NO_DIRECTION;
 		}
 
 		snake.move(snakeDirection);
 
 		if(snake.isSelfColliding()
-		&& snakeDirection != NO_DIRECTION )
+				&& snakeDirection != NO_DIRECTION )
 		{
 			snake.reset();
 			fruit.reset();
+			snakeDirection = NO_DIRECTION;
 		}
 
 		if(snake.getPosition() == fruit.getPosition())
@@ -69,13 +71,13 @@ int main()
 			fruit.reset();
 		}
 
-        window.clear();
+		window.clear();
 
-		snake.draw(&window);
-		fruit.draw(&window);
+		snake.draw(window);
+		fruit.draw(window);
 
-        window.display();
-    }
+		window.display();
+	}
 
-    return 0;
+	return 0;
 }
