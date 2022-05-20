@@ -7,7 +7,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "SNAKE SFML");
+	sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "SNAKE SFML");
 	window.setFramerateLimit(FRAMERATE);
 	Snake snake;
 	snake++;//tail
