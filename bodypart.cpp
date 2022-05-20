@@ -35,7 +35,7 @@ void BodyPart::move(Direction dir)//(U)p (D)own (L)eft (R)ight
 		case Right:
 			partShape.move(SNAKE_SPEED,0);
 			break;
-	
+
 		default:
 			break;
 	}

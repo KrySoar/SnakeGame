@@ -29,7 +29,7 @@ void Snake::move(Direction dir)
 		case Right:
 			snakeBody.front().move(Right);
 			break;
-	
+
 		default:
 			break;
 	}
@@ -41,10 +41,10 @@ void Snake::move(Direction dir)
 }
 
 
-void Snake::draw(sf::RenderWindow *win)
+void Snake::draw(sf::RenderWindow &win)
 {
-	for(BodyPart bp : snakeBody)
-		bp.draw(win);
+	for(BodyPart &bp : snakeBody)
+		bp.draw(&win);
 }
 
 sf::Vector2f Snake::getPosition()

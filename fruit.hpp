@@ -10,5 +10,5 @@ class Fruit
 		Fruit();
 		void reset();
 		sf::Vector2f getPosition();
-		void draw(sf::RenderWindow*);
+		void draw(sf::RenderWindow&);
 };

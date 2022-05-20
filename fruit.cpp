@@ -25,7 +25,7 @@ sf::Vector2f Fruit::getPosition()
 	return fruitShape.getPosition();
 }
 
-void Fruit::draw(sf::RenderWindow *win)
+void Fruit::draw(sf::RenderWindow &win)
 {
-	win->draw(fruitShape);
+	win.draw(fruitShape);
 }
